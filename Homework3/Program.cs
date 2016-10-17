@@ -10,6 +10,7 @@ namespace Homework3
     {
         static void Main(string[] args)
         {
+            //Declare the type of variable
             float SecInMin, SecInDay, SecInHour;
             float NumOfDays, NumOfHours, NumOfMin, NumOfSec;
 
@@ -18,13 +19,13 @@ namespace Homework3
             string sec = Console.ReadLine();
             float x = float.Parse(sec);
 
-            //Initialize number of seconds in a minute
+            //Assign number of seconds in a minute to the variable
             SecInMin = 60;
 
-            //Initialize number of seconds in an hour
+            //Assign number of seconds in an hour to the variable
             SecInHour = SecInMin * SecInMin;
 
-            //Initialize number of seconds in a day
+            //Assign number of seconds in a day to the variable
             SecInDay = SecInHour * 24;
 
             //Calculate number of days, hours, minutes and seconds from the user input
