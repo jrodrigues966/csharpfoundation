@@ -23,7 +23,7 @@ namespace HomeWork3
             int factorial = 1;
             int k = input;
 
-            //Find factorial when user input is strictly greater than 1 and otherwise
+            //Crank the wheel
             if (k > 1)
             {
                 do
