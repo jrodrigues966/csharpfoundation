@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace homework3
+namespace HomeWork3
 {
     class Program
     {
