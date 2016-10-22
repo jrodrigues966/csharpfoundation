@@ -1,5 +1,0 @@
-C:\source\HomeWork4\HomeWork4\bin\Debug\HomeWork4.exe.config
-C:\source\HomeWork4\HomeWork4\bin\Debug\HomeWork4.exe
-C:\source\HomeWork4\HomeWork4\bin\Debug\HomeWork4.pdb
-C:\source\HomeWork4\HomeWork4\obj\Debug\HomeWork4.exe
-C:\source\HomeWork4\HomeWork4\obj\Debug\HomeWork4.pdb

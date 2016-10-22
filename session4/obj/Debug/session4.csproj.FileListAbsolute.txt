@@ -1,6 +1,0 @@
-C:\source\session4\bin\Debug\session4.exe.config
-C:\source\session4\bin\Debug\session4.exe
-C:\source\session4\bin\Debug\session4.pdb
-C:\source\session4\obj\Debug\session4.csprojResolveAssemblyReference.cache
-C:\source\session4\obj\Debug\session4.exe
-C:\source\session4\obj\Debug\session4.pdb
