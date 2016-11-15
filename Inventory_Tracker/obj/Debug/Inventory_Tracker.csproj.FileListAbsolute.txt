@@ -1,0 +1,6 @@
+C:\source\Inventory_Tracker\bin\Debug\Inventory_Tracker.exe.config
+C:\source\Inventory_Tracker\bin\Debug\Inventory_Tracker.exe
+C:\source\Inventory_Tracker\bin\Debug\Inventory_Tracker.pdb
+C:\source\Inventory_Tracker\obj\Debug\Inventory_Tracker.csprojResolveAssemblyReference.cache
+C:\source\Inventory_Tracker\obj\Debug\Inventory_Tracker.exe
+C:\source\Inventory_Tracker\obj\Debug\Inventory_Tracker.pdb

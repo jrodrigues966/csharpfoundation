@@ -17,7 +17,7 @@ namespace HomeWork4
             string Value = Console.ReadLine();
             int input = int.Parse(Value);
 
-            //Initialize a variable such that factorial of 1 or zero gives 1 
+            //Initialize a variable such that factorial of 1 or zero gives 1
             int factorial = 1;
 
             //Initialize variable to increment

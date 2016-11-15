@@ -1,0 +1,6 @@
+C:\source\HomeWork6\bin\Release\HomeWork6.exe.config
+C:\source\HomeWork6\bin\Release\HomeWork6.exe
+C:\source\HomeWork6\bin\Release\HomeWork6.pdb
+C:\source\HomeWork6\obj\Release\HomeWork6.exe
+C:\source\HomeWork6\obj\Release\HomeWork6.pdb
+C:\source\HomeWork6\obj\Release\HomeWork6.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+C:\source\session5\bin\Debug\session5.exe.config
+C:\source\session5\obj\Debug\session5.csprojResolveAssemblyReference.cache
+C:\source\session5\bin\Debug\session5.exe
+C:\source\session5\bin\Debug\session5.pdb
+C:\source\session5\obj\Debug\session5.exe
+C:\source\session5\obj\Debug\session5.pdb
