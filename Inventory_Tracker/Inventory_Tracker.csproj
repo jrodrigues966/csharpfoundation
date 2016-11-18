@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6979D7DF-C3EC-458C-BC3C-71E40F04B6FA}</ProjectGuid>
+    <ProjectGuid>{CA8AA85E-84BC-450C-9903-A905A8822343}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Inventory_Tracker</RootNamespace>
