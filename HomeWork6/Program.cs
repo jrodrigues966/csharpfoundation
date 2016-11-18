@@ -107,7 +107,7 @@ namespace Homework6
                         }
                     default:
                         {
-                            Console.WriteLine("Invalid option [{0}]", choice);
+                            Console.WriteLine("Invalid option {0}", choice);
                             break;
                         }
                 }
