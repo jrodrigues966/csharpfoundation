@@ -145,7 +145,8 @@ namespace Inventory_Tracker
                                 {
                                     iDelete = true;
                                     //Delete the item if you found it
-                                    //itemData[i - 1] = itemData;
+                                    item[i + 1] = item[i];
+                                    
                                     //Reset the count to show a new count for your list
                                     ItemCount = ItemCount - 1;
                                     //(Note: your list is now reduced by one item)
