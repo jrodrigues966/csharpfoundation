@@ -22,8 +22,7 @@ namespace Inventory_Tracker
             // use an interger to keep track of the count of items in your inventory
             int ItemCount = 0;
             // create an array of your ItemData struct
-            var item = new itemData[3];
-
+            var item = new itemData[4];
             // use a never ending loop that shows the user what options they can select
             while (true)
             {
@@ -145,13 +144,15 @@ namespace Inventory_Tracker
                                 {
                                     iDelete = true;
                                     //Delete the item if you found it
-                                    item[i + 1] = item[i];
-                                    
-                                    //Reset the count to show a new count for your list
+                                      if (i < ItemCount - 1)
+                                        {
+                                            item[i] = item[i + 1];
+                                        }
+                                    }
+                                   //Reset the count to show a new count for your list
                                     ItemCount = ItemCount - 1;
                                     //(Note: your list is now reduced by one item)
                                 }
-                            }
                             //Hint the user that you deleted the requested item
                             if (iDelete)
                             {
@@ -179,20 +180,25 @@ namespace Inventory_Tracker
                             }
                             break;
                         }
+                
 
-                    ////quit the program if this option is selected
-                    //case 5:
-                    //    {
-                    //        Console.Write("Are you sure that you want to quit(y/n)? ");
-                    //        string strresp = Console.ReadLine();
-
-
-                    //        if (code) // code
-                    //        {
-                    //            optx = 0;   //as long as it is not 5, the process is not breaking
-                    //        }
-                    //        break;
-                    //    }
+                    //quit the program if this option is selected
+                    case 5:
+                        {
+                            Console.Write("Are you sure that you want to quit(y/n)? ");
+                            string userinput = Console.ReadLine();
+                            string newinput = userinput.ToLower();
+                           
+                            if (newinput == "n") 
+                            {
+                                choice = 5;   //as long as it is not 5, the process is not breaking
+                            }
+                            else
+                            {
+                                Environment.Exit(0);
+                            }
+                            break;
+                        }
                     default:
                         {
                             Console.Write("Invalid Option, try again");
