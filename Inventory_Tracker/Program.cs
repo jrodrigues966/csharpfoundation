@@ -138,7 +138,7 @@ namespace Inventory_Tracker
                             int itemidnotodelete = int.Parse(id);
                             bool iDelete = false;
 
-                            for (int i = 0; i < ItemCount; i++)
+                            for (var i = 0; i < ItemCount; i++)
                             {
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
