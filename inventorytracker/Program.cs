@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inventory_Tracker
+
+namespace inventorytracker
 {
     struct itemData
     {
@@ -47,23 +48,19 @@ namespace Inventory_Tracker
                     case 1:
                         {
                             Console.Write("Please enter item ID No: ");
-                            string id = Console.ReadLine();
-                            int itemidno = int.Parse(id);
+                            int itemidno = Convert.ToInt32(Console.ReadLine());
 
                             Console.Write("Please enter description: ");
                             string description = Console.ReadLine();
 
                             Console.Write("Please enter price: ");
-                            string p = Console.ReadLine();
-                            double price = double.Parse(p);
+                            double price = Convert.ToDouble(Console.ReadLine());
 
                             Console.Write("Please enter quantity: ");
-                            string q = Console.ReadLine();
-                            int quantity = int.Parse(q);
+                            int quantity = Convert.ToInt32(Console.ReadLine());
 
                             Console.Write("Please enter cost: ");
-                            string c = Console.ReadLine();
-                            double cost = double.Parse(c);
+                            double cost = Convert.ToInt32(Console.ReadLine());
 
                             //Add item to the end of the array 
                             item[ItemCount].itemIDNo = itemidno;
@@ -85,15 +82,14 @@ namespace Inventory_Tracker
                             int olditemidno = int.Parse(oldid);
                             bool iFound = false;
 
-                            for (int i = 0; i < item.Length; i++) 
+                            for (int i = 0; i < item.Length; i++)
                             {
                                 if (item[i].itemIDNo == olditemidno)
                                 {
                                     iFound = true;
                                     //Code to show what has to happen if the item in the list is found
                                     Console.Write("Please enter new item ID No: ");
-                                    string newid = Console.ReadLine();
-                                    int newitemidno = int.Parse(newid);
+                                    int newitemidno = Convert.ToInt32(Console.ReadLine());
                                     item[i].itemIDNo = newitemidno;
 
                                     Console.Write("Please enter description: ");
@@ -101,22 +97,19 @@ namespace Inventory_Tracker
                                     item[i].Description = description;
 
                                     Console.Write("Please enter price: ");
-                                    string p = Console.ReadLine();
-                                    double price = double.Parse(p);
+                                    double price = Convert.ToDouble(Console.ReadLine());
                                     item[i].PricePerItem = price;
 
                                     Console.Write("Please enter quantity: ");
-                                    string q = Console.ReadLine();
-                                    int quantity = int.Parse(q);
+                                    int quantity = Convert.ToInt32(Console.ReadLine());
                                     item[i].QuantityOnHand = quantity;
 
                                     Console.Write("Please enter cost: ");
-                                    string c = Console.ReadLine();
-                                    double cost = double.Parse(c);
+                                    double cost = Convert.ToDouble(Console.ReadLine());
                                     item[i].CostPerItem = cost;
 
                                     item[i].ItemValue = price * cost;
-                                    
+
                                     //Reset the count to show a new count for your list
                                     //ItemCount = ItemCount + 1;
                                     //(Note: your list is now increased by one item) 
@@ -134,8 +127,7 @@ namespace Inventory_Tracker
                     case 3:
                         {
                             Console.Write("Please enter an item ID No: ");
-                            string id = Console.ReadLine();
-                            int itemidnotodelete = int.Parse(id);
+                            int itemidnotodelete = Convert.ToInt32(Console.ReadLine());
                             bool iDelete = false;
 
                             for (int i = 0; i < ItemCount; i++)
@@ -144,15 +136,16 @@ namespace Inventory_Tracker
                                 {
                                     iDelete = true;
                                     //Delete the item if you found it
-                                      if (i < ItemCount - 1)
-                                        {
-                                            item[i] = item[i + 1];
-                                        }
-                                    }
-                                   //Reset the count to show a new count for your list
-                                    ItemCount = ItemCount - 1;
-                                    //(Note: your list is now reduced by one item)
+                                    i = i + 1;
+                                    //if (i < ItemCount - 1)
+                                    // {
+                                    //    item[i] = item[i + 1];
+                                    // }
                                 }
+                                //Reset the count to show a new count for your list
+
+                                //(Note: your list is now reduced by one item)
+                            }
                             //Hint the user that you deleted the requested item
                             if (iDelete)
                             {
@@ -169,18 +162,18 @@ namespace Inventory_Tracker
                     //List all items in current database if this option is selected
                     case 4:
                         {
-                            Console.WriteLine("Item#  ItemID  Description           Price   QOH  Cost  Value");
-                            Console.WriteLine("-----  ------  --------------------  -----   ---  ----  -----");
+                            Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
+                            Console.WriteLine("-----  ------  --------------------  -----  ---  ----  -----");
 
                             //Code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
                             for (int i = 0; i < ItemCount; i++)
                             {
-                                Console.WriteLine("{0, -6} {1, -7} {2, -13} {3,12} {4, -6} {5, -13} {6, -22}", i + 1, item[i].itemIDNo, 
-                                    item[i].Description, item[i].PricePerItem, item[i].QuantityOnHand, item[i].CostPerItem, item[i].PricePerItem * item[i].QuantityOnHand);
+                                Console.WriteLine("{0, -6} {1, -7} {2, -21} {3, -7}{4, -1}  {5, 10} {6}", i + 1, item[i].itemIDNo,
+                                item[i].Description, item[i].PricePerItem, item[i].QuantityOnHand, item[i].CostPerItem, item[i].PricePerItem * item[i].QuantityOnHand);
                             }
                             break;
                         }
-                
+
 
                     //quit the program if this option is selected
                     case 5:
@@ -188,8 +181,8 @@ namespace Inventory_Tracker
                             Console.Write("Are you sure that you want to quit(y/n)? ");
                             string userinput = Console.ReadLine();
                             string newinput = userinput.ToLower();
-                           
-                            if (newinput == "n") 
+
+                            if (newinput == "n")
                             {
                                 choice = 5;   //as long as it is not 5, the process is not breaking
                             }
@@ -209,3 +202,4 @@ namespace Inventory_Tracker
         }
     }
 }
+
