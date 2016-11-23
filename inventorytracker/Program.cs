@@ -136,14 +136,14 @@ namespace inventorytracker
                                 {
                                     iDelete = true;
                                     //Delete the item if you found it
-                                    i = i + 1;
-                                    //if (i < ItemCount - 1)
-                                    // {
-                                    //    item[i] = item[i + 1];
-                                    // }
+                                    item[i].itemIDNo = item[i + 1].itemIDNo;
+                                    item[i].Description = item[i + 1].Description;
+                                    item[i].PricePerItem = item[i + 1].PricePerItem;
+                                    item[i].QuantityOnHand = item[i + 1].QuantityOnHand;
+                                    item[i].ItemValue = item[i + 1].ItemValue;
                                 }
                                 //Reset the count to show a new count for your list
-
+                                ItemCount = ItemCount - 1;
                                 //(Note: your list is now reduced by one item)
                             }
                             //Hint the user that you deleted the requested item
@@ -202,4 +202,3 @@ namespace inventorytracker
         }
     }
 }
-
