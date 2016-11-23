@@ -128,28 +128,34 @@ namespace inventorytracker
                         {
                             Console.Write("Please enter an item ID No: ");
                             int itemidnotodelete = Convert.ToInt32(Console.ReadLine());
+                            int indexofdeleteditem = -1;
                             bool iDelete = false;
 
-                            for (var i = 0; i < ItemCount; i++)
+                            // find index of item ID
+                            for (var i = 0; i < ItemCount - 1; i++)
                             {
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
                                     iDelete = true;
+                                    indexofdeleteditem = i;
+                                    break;                                    
+                                }
+                            }
+                            if (iDelete)
+                            {
+                                for (var i = indexofdeleteditem; i < ItemCount - 1; i++)
+                                {
                                     //Delete the item if you found it
                                     item[i].itemIDNo = item[i + 1].itemIDNo;
                                     item[i].Description = item[i + 1].Description;
                                     item[i].PricePerItem = item[i + 1].PricePerItem;
                                     item[i].QuantityOnHand = item[i + 1].QuantityOnHand;
                                     item[i].ItemValue = item[i + 1].ItemValue;
+
+                                    //Reset the count to show a new count for your list
+                                    ItemCount = ItemCount - 1;
+                                    //(Note: your list is now reduced by one item)
                                 }
-                                //Reset the count to show a new count for your list
-                                ItemCount = ItemCount - 1;
-                                //(Note: your list is now reduced by one item)
-                            }
-                            //Hint the user that you deleted the requested item
-                            if (iDelete)
-                            {
-                                Console.WriteLine("Item deleted.");
                             }
                             // if did not find it, hint the user that you did not find it in your list
                             else
