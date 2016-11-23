@@ -23,7 +23,7 @@ namespace inventorytracker
             // use an interger to keep track of the count of items in your inventory
             int ItemCount = 0;
             // create an array of your ItemData struct
-            var item = new itemData[4];
+            var item = new itemData[5];
             // use a never ending loop that shows the user what options they can select
             while (true)
             {
