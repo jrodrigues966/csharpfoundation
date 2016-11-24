@@ -132,7 +132,15 @@ namespace inventorytracker
                             bool iDelete = false;
 
                             // find index of item ID
-                            for (var i = 0; i < ItemCount - 1; i++)
+                            foreach (var i in ItemCount)
+                            {
+                                if (item[i].itemIDNo == itemidnotodelete)
+                                {
+                                    int index = ItemCount.IndexOf(i);
+                                }
+                                
+                            }
+                            //**for (var i = 0; i < ItemCount - 1; i++)
                             {
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
@@ -140,6 +148,7 @@ namespace inventorytracker
                                     indexofdeleteditem = i;
                                     break;                                    
                                 }
+                                **//
                             }
                             if (iDelete)
                             {
