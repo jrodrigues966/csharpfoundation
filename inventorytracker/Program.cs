@@ -173,7 +173,7 @@
                                 //Code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
                                 for (int i = 0; i < ItemCount; i++)
                                 {
-                                    Console.WriteLine("{0, -6} {1, -7} {2, -21} {3, -6} {4, -4} {5, -6} {6, -5}", i + 1, item[i].itemIDNo,
+                                    Console.WriteLine("{0, -6} {1, -7} {2, -21} {3, -6} {4, -4} {5, -6} {6, -6}", i + 1, item[i].itemIDNo,
                                     item[i].Description, item[i].PricePerItem, item[i].QuantityOnHand, item[i].CostPerItem, item[i].PricePerItem * item[i].QuantityOnHand);
                                 }
                                 break;
