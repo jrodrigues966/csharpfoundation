@@ -1,210 +1,190 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
 
-namespace inventorytracker
-{
-    struct itemData
+    namespace inventorytracker
     {
-        public int itemIDNo;
-        public string Description;
-        public double PricePerItem;
-        public int QuantityOnHand;
-        public double CostPerItem;
-        public double ItemValue;
-    }
-    class Inventory
-    {
-        static void Main(string[] args)
+        struct itemData
         {
-            // use an interger to keep track of the count of items in your inventory
-            int ItemCount = 0;
-            // create an array of your ItemData struct
-            var item = new itemData[5];
-            // use a never ending loop that shows the user what options they can select
-            while (true)
+            public int itemIDNo;
+            public string Description;
+            public double PricePerItem;
+            public int QuantityOnHand;
+            public double CostPerItem;
+            public double ItemValue;
+        }
+        class Inventory
+        {
+            static void Main(string[] args)
             {
-                Console.WriteLine("************************************");
-                Console.WriteLine();
-                Console.WriteLine("Select one of the following options");
-                Console.WriteLine();
-                Console.WriteLine("1) Add an item 2) Change an item 3) Delete an item 4) List all items 5) Quit");
-
-                // read user's input
-                string Selection = Console.ReadLine();
-
-                // convert the given string to integer to match our case types shown below and convert option to be non-case sensitive
-                int choice = int.Parse(Selection);
-
-                // provide an extra blank line on screen
-                Console.WriteLine();
-
-                switch (choice)
+                // use an interger to keep track of the count of items in your inventory
+                int ItemCount = 0;
+                // create an array of your ItemData struct
+                var item = new itemData[5];
+                // use a never ending loop that shows the user what options they can select
+                while (true)
                 {
-                    // add an item to the list if this option is selected
-                    case 1:
-                        {
-                            Console.Write("Please enter item ID No: ");
-                            int itemidno = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("************************************");
+                    Console.WriteLine();
+                    Console.WriteLine("Select one of the following options");
+                    Console.WriteLine();
+                    Console.WriteLine("1) Add an item 2) Change an item 3) Delete an item 4) List all items 5) Quit");
 
-                            Console.Write("Please enter description: ");
-                            string description = Console.ReadLine();
+                    // read user's input
+                    string Selection = Console.ReadLine();
 
-                            Console.Write("Please enter price: ");
-                            double price = Convert.ToDouble(Console.ReadLine());
+                    // convert the given string to integer to match our case types shown below and convert option to be non-case sensitive
+                    int choice = int.Parse(Selection);
 
-                            Console.Write("Please enter quantity: ");
-                            int quantity = Convert.ToInt32(Console.ReadLine());
+                    // provide an extra blank line on screen
+                    Console.WriteLine();
 
-                            Console.Write("Please enter cost: ");
-                            double cost = Convert.ToInt32(Console.ReadLine());
-
-                            //Add item to the end of the array 
-                            item[ItemCount].itemIDNo = itemidno;
-                            item[ItemCount].Description = description;
-                            item[ItemCount].PricePerItem = price;
-                            item[ItemCount].QuantityOnHand = quantity;
-                            item[ItemCount].CostPerItem = cost;
-                            item[ItemCount].ItemValue = price * cost;
-
-                            ItemCount = ItemCount + 1;
-                            break;
-                        }
-
-                    //Change items in the list if this option is selected
-                    case 2:
-                        {
-                            Console.Write("Please enter an item ID No: ");
-                            string oldid = Console.ReadLine();
-                            int olditemidno = int.Parse(oldid);
-                            bool iFound = false;
-
-                            for (int i = 0; i < item.Length; i++)
+                    switch (choice)
+                    {
+                        // add an item to the list if this option is selected
+                        case 1:
                             {
-                                if (item[i].itemIDNo == olditemidno)
+                                Console.Write("Please enter item ID No: ");
+                                int itemidno = Convert.ToInt32(Console.ReadLine());
+
+                                Console.Write("Please enter description: ");
+                                string description = Console.ReadLine();
+
+                                Console.Write("Please enter price: ");
+                                double price = Convert.ToDouble(Console.ReadLine());
+
+                                Console.Write("Please enter quantity: ");
+                                int quantity = Convert.ToInt32(Console.ReadLine());
+
+                                Console.Write("Please enter cost: ");
+                                double cost = Convert.ToInt32(Console.ReadLine());
+
+                                //Add item to the end of the array 
+                                item[ItemCount].itemIDNo = itemidno;
+                                item[ItemCount].Description = description;
+                                item[ItemCount].PricePerItem = price;
+                                item[ItemCount].QuantityOnHand = quantity;
+                                item[ItemCount].CostPerItem = cost;
+                                item[ItemCount].ItemValue = price * quantity;
+
+                                ItemCount = ItemCount + 1;
+                                break;
+                            }
+
+                        //Change items in the list if this option is selected
+                        case 2:
+                            {
+                                Console.Write("Please enter an item ID No: ");
+                                string oldid = Console.ReadLine();
+                                int olditemidno = int.Parse(oldid);
+                                bool iFound = false;
+
+                                for (int i = 0; i < item.Length; i++)
                                 {
-                                    iFound = true;
-                                    //Code to show what has to happen if the item in the list is found
-                                    Console.Write("Please enter new item ID No: ");
-                                    int newitemidno = Convert.ToInt32(Console.ReadLine());
-                                    item[i].itemIDNo = newitemidno;
+                                    if (item[i].itemIDNo == olditemidno)
+                                    {
+                                        iFound = true;
+                                        //Code to show what has to happen if the item in the list is found
+                                        Console.Write("Please enter new item ID No: ");
+                                        int newitemidno = Convert.ToInt32(Console.ReadLine());
+                                        item[i].itemIDNo = newitemidno;
 
-                                    Console.Write("Please enter description: ");
-                                    string description = Console.ReadLine();
-                                    item[i].Description = description;
+                                        Console.Write("Please enter description: ");
+                                        string description = Console.ReadLine();
+                                        item[i].Description = description;
 
-                                    Console.Write("Please enter price: ");
-                                    double price = Convert.ToDouble(Console.ReadLine());
-                                    item[i].PricePerItem = price;
+                                        Console.Write("Please enter price: ");
+                                        double price = Convert.ToDouble(Console.ReadLine());
+                                        item[i].PricePerItem = price;
 
-                                    Console.Write("Please enter quantity: ");
-                                    int quantity = Convert.ToInt32(Console.ReadLine());
-                                    item[i].QuantityOnHand = quantity;
+                                        Console.Write("Please enter quantity: ");
+                                        int quantity = Convert.ToInt32(Console.ReadLine());
+                                        item[i].QuantityOnHand = quantity;
 
-                                    Console.Write("Please enter cost: ");
-                                    double cost = Convert.ToDouble(Console.ReadLine());
-                                    item[i].CostPerItem = cost;
+                                        Console.Write("Please enter cost: ");
+                                        double cost = Convert.ToDouble(Console.ReadLine());
+                                        item[i].CostPerItem = cost;
 
-                                    item[i].ItemValue = price * cost;
+                                        item[i].ItemValue = price * cost;
 
-                                    //Reset the count to show a new count for your list
-                                    //ItemCount = ItemCount + 1;
-                                    //(Note: your list is now increased by one item) 
+                                        //Reset the count to show a new count for your list
+                                        //ItemCount = ItemCount + 1;
+                                        //(Note: your list is now increased by one item) 
+                                    }
                                 }
+                                //And if not found
+                                if (!iFound)
+                                {
+                                    Console.WriteLine("Item {0} not found.", olditemidno);
+                                }
+                                break;
                             }
-                            //And if not found
-                            if (!iFound)
-                            {
-                                Console.WriteLine("Item {0} not found.", olditemidno);
-                            }
-                            break;
-                        }
 
-                    //Delete items in the list if this option is selected
-                    case 3:
+                        //Delete items in the list if this option is selected
+                        case 3:
                         {
                             Console.Write("Please enter an item ID No: ");
                             int itemidnotodelete = Convert.ToInt32(Console.ReadLine());
-                            int indexofdeleteditem = -1;
-                            bool iDelete = false;
+                            bool found = false;
 
-                            // find index of item ID
-                            for (var i = 0; i < ItemCount - 1; i++)
+                            for (var i = 0; i < ItemCount; i++)
                             {
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
-                                    iDelete = true;
-                                    indexofdeleteditem = i;
-                                    break;                                    
+                                    found = true;
+
                                 }
                             }
-                            if (iDelete)
+                            if (!found)
                             {
-                                for (var i = indexofdeleteditem; i < ItemCount - 1; i++)
+                                Console.WriteLine("Item {0} not found", itemidnotodelete);
+                            }
+                            break;
+                        }
+
+                        //List all items in current database if this option is selected
+                        case 4:
+                            {
+                                Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
+                                Console.WriteLine("-----  ------  --------------------  -----  ---  ----  -----");
+
+                                //Code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
+                                for (int i = 0; i < ItemCount; i++)
                                 {
-                                    //Delete the item if you found it
-                                    item[i].itemIDNo = item[i + 1].itemIDNo;
-                                    item[i].Description = item[i + 1].Description;
-                                    item[i].PricePerItem = item[i + 1].PricePerItem;
-                                    item[i].QuantityOnHand = item[i + 1].QuantityOnHand;
-                                    item[i].ItemValue = item[i + 1].ItemValue;
-
-                                    //Reset the count to show a new count for your list
-                                    ItemCount = ItemCount - 1;
-                                    //(Note: your list is now reduced by one item)
+                                    Console.WriteLine("{0, -6} {1, -7} {2, -21} {3, -7}{4, -1}  {5, 10} {6}", i + 1, item[i].itemIDNo,
+                                    item[i].Description, item[i].PricePerItem, item[i].QuantityOnHand, item[i].CostPerItem, item[i].PricePerItem * item[i].QuantityOnHand);
                                 }
+                                break;
                             }
-                            // if did not find it, hint the user that you did not find it in your list
-                            else
+
+
+                        //quit the program if this option is selected
+                        case 5:
                             {
-                                Console.WriteLine("Item {0} not found.", itemidnotodelete);
+                                Console.Write("Are you sure that you want to quit(y/n)? ");
+                                string userinput = Console.ReadLine();
+                                string newinput = userinput.ToLower();
+
+                                if (newinput == "n")
+                                {
+                                    choice = 5;   //as long as it is not 5, the process is not breaking
+                                }
+                                else
+                                {
+                                    Environment.Exit(0);
+                                }
+                                break;
                             }
-                            break;
-                        }
-
-                    //List all items in current database if this option is selected
-                    case 4:
-                        {
-                            Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
-                            Console.WriteLine("-----  ------  --------------------  -----  ---  ----  -----");
-
-                            //Code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
-                            for (int i = 0; i < ItemCount; i++)
+                        default:
                             {
-                                Console.WriteLine("{0, -6} {1, -7} {2, -21} {3, -7}{4, -1}  {5, 10} {6}", i + 1, item[i].itemIDNo,
-                                item[i].Description, item[i].PricePerItem, item[i].QuantityOnHand, item[i].CostPerItem, item[i].PricePerItem * item[i].QuantityOnHand);
+                                Console.Write("Invalid Option, try again");
+                                break;
                             }
-                            break;
-                        }
-
-
-                    //quit the program if this option is selected
-                    case 5:
-                        {
-                            Console.Write("Are you sure that you want to quit(y/n)? ");
-                            string userinput = Console.ReadLine();
-                            string newinput = userinput.ToLower();
-
-                            if (newinput == "n")
-                            {
-                                choice = 5;   //as long as it is not 5, the process is not breaking
-                            }
-                            else
-                            {
-                                Environment.Exit(0);
-                            }
-                            break;
-                        }
-                    default:
-                        {
-                            Console.Write("Invalid Option, try again");
-                            break;
-                        }
+                    }
                 }
             }
         }
     }
-}
