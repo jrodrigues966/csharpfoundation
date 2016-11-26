@@ -134,24 +134,12 @@
                             {
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
-                                    iDelete = true;
-                                    indexofdeleteditem = i;
+                                    found = true;
+
                                     break;                                    
                                 }
                             }
-                            if (iDelete)
-                            {
-                                for (var i = indexofdeleteditem; i < ItemCount - 1; i++)
-                                {
-                                    //Delete the item if you found it
-                                    item[i].itemIDNo = item[i + 1].itemIDNo;
-                                    item[i].Description = item[i + 1].Description;
-                                    item[i].PricePerItem = item[i + 1].PricePerItem;
-                                    item[i].QuantityOnHand = item[i + 1].QuantityOnHand;
-                                    item[i].ItemValue = item[i + 1].ItemValue;
 
-                                }
-                            }
                             if (!found)
                             {
                                 Console.WriteLine("Item {0} not found", itemidnotodelete);
