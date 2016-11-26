@@ -135,18 +135,35 @@
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
                                     found = true;
+                                    // code to show what has to happen if the item in the list is found
+                                    int indextodelete = i;
+                                    item[i].itemIDNo = item[i + 1].itemIDNo;
+                                    item[i].Description = item[i + 1].Description;
+                                    item[i].PricePerItem = item[i + 1].PricePerItem;
+                                    item[i].QuantityOnHand = item[i + 1].QuantityOnHand;
+                                    item[i].ItemValue = item[i + 1].PricePerItem * item[i + 1].QuantityOnHand;
 
-                                    break;                                    
+                                    //for (int j = indextodelete; j != ItemCount; j++)
+                                    //{
+                                    //    item[j].itemIDNo = item[j + ItemCount].itemIDNo;
+                                    //    item[j].Description = item[j + ItemCount].Description;
+                                    //    item[j].PricePerItem = item[j + ItemCount].PricePerItem;
+                                    //    item[j].QuantityOnHand = item[j + ItemCount].QuantityOnHand;
+                                    //    item[j].ItemValue = item[j + ItemCount].PricePerItem * item[j + ItemCount].QuantityOnHand;
+                                    //}
+                                    // reset the count to show a new count for your list
+                                     
+                                    // (Note: your list is now increased by one item)                                                                        
                                 }
+                                //ItemCount--;
+                                break;
                             }
-
                             if (!found)
                             {
                                 Console.WriteLine("Item {0} not found", itemidnotodelete);
                             }
                             break;
                         }
-
                         //List all items in current database if this option is selected
                         case 4:
                             {
@@ -156,13 +173,11 @@
                                 //Code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
                                 for (int i = 0; i < ItemCount; i++)
                                 {
-                                    Console.WriteLine("{0, -6} {1, -7} {2, -21} {3, -7}{4, -1}  {5, 10} {6}", i + 1, item[i].itemIDNo,
+                                    Console.WriteLine("{0, -6} {1, -7} {2, -21} {3, -6} {4, -4} {5, -6} {6, -5}", i + 1, item[i].itemIDNo,
                                     item[i].Description, item[i].PricePerItem, item[i].QuantityOnHand, item[i].CostPerItem, item[i].PricePerItem * item[i].QuantityOnHand);
                                 }
                                 break;
                             }
-
-
                         //quit the program if this option is selected
                         case 5:
                             {
