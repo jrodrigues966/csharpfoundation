@@ -134,7 +134,21 @@
                             {
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
-                                    found = true;
+                                    iDelete = true;
+                                    indexofdeleteditem = i;
+                                    break;                                    
+                                }
+                            }
+                            if (iDelete)
+                            {
+                                for (var i = indexofdeleteditem; i < ItemCount - 1; i++)
+                                {
+                                    //Delete the item if you found it
+                                    item[i].itemIDNo = item[i + 1].itemIDNo;
+                                    item[i].Description = item[i + 1].Description;
+                                    item[i].PricePerItem = item[i + 1].PricePerItem;
+                                    item[i].QuantityOnHand = item[i + 1].QuantityOnHand;
+                                    item[i].ItemValue = item[i + 1].ItemValue;
 
                                 }
                             }
