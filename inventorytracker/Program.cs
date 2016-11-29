@@ -128,37 +128,23 @@
                         {
                             Console.Write("Please enter an item ID No: ");
                             int itemidnotodelete = Convert.ToInt32(Console.ReadLine());
-                            bool found = false;
+                            bool iFound = false;
 
                             for (var i = 0; i < ItemCount; i++)
                             {
                                 if (item[i].itemIDNo == itemidnotodelete)
                                 {
-                                    found = true;
-                                    // code to show what has to happen if the item in the list is found
-                                    int indextodelete = i;
-                                    item[i].itemIDNo = item[i + 1].itemIDNo;
-                                    item[i].Description = item[i + 1].Description;
-                                    item[i].PricePerItem = item[i + 1].PricePerItem;
-                                    item[i].QuantityOnHand = item[i + 1].QuantityOnHand;
-                                    item[i].ItemValue = item[i + 1].PricePerItem * item[i + 1].QuantityOnHand;
-
-                                    //for (int j = indextodelete; j != ItemCount; j++)
-                                    //{
-                                    //    item[j].itemIDNo = item[j + ItemCount].itemIDNo;
-                                    //    item[j].Description = item[j + ItemCount].Description;
-                                    //    item[j].PricePerItem = item[j + ItemCount].PricePerItem;
-                                    //    item[j].QuantityOnHand = item[j + ItemCount].QuantityOnHand;
-                                    //    item[j].ItemValue = item[j + ItemCount].PricePerItem * item[j + ItemCount].QuantityOnHand;
-                                    //}
-                                    // reset the count to show a new count for your list
-                                     
-                                    // (Note: your list is now increased by one item)                                                                        
+                                    iFound = true;
+                                    // index of the item to delete
+                                    var indextodelete = i;
+                                    for (int j = indextodelete; j < item.Length - 1; j++)
+                                    {
+                                        item[i] = item[i + 1];
+                                    }                                   
                                 }
-                                //ItemCount--;
-                                break;
+                                ItemCount--;                        
                             }
-                            if (!found)
+                            if (!iFound)
                             {
                                 Console.WriteLine("Item {0} not found", itemidnotodelete);
                             }
