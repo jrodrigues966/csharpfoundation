@@ -128,7 +128,7 @@
                                     iFound = true;
                                     // index of the item to delete
                                     var indextodelete = i;
-                                    // 
+                                    // shrink array
                                     for (int j = indextodelete; j < item.Length - 1; j++)
                                     {
                                         // copy next struct into current struct
