@@ -139,10 +139,10 @@
                                     var indextodelete = i;
                                     for (int j = indextodelete; j < item.Length - 1; j++)
                                     {
-                                        item[i] = item[i + 1];
-                                    }                                   
+                                        item[j] = item[j + 1];
+                                    }
                                 }
-                                ItemCount--;                        
+                                ItemCount--;
                             }
                             if (!iFound)
                             {
