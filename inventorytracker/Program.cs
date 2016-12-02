@@ -66,8 +66,6 @@
                                 item[ItemCount].QuantityOnHand = quantity;
                                 item[ItemCount].CostPerItem = cost;
                                 item[ItemCount].ItemValue = price * quantity;
-                                // increase item count
-                                ItemCount ++;
                                 break;
                             }
                         // change items in the list if this option is selected
